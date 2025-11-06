@@ -1,0 +1,182 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskr | Home</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="../../images/logo-dark.svg" alt="" class="logo">
+        <button class="menu-toggle" aria-label="Open menu">
+            <img src="/images/menu-dark.svg" alt="">
+        </button>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="breeds.html">Breeds</a>
+            <a href="map.html">Map</a>
+            <a href="care.html">Care</a>
+            <a href="quiz.html" class="nav-mobile-only">Find Your Cat</a>
+        </nav>
+
+        <div class="find-cat-btn">
+            <a href="quiz.html">
+                <span>Find Your Cat</span>
+                <img src="../../images/down-arrow.svg" alt="">
+            </a>
+        </div>
+    </header>
+
+    <section class="quiz-page">
+        <div class="quiz-container">
+            <!-- Question 1 -->
+            <div class="quiz-question active" data-question="1">
+                <div class="question-header">
+                    <span class="question-number">01.</span>
+                    <h2 class="question-text">When relaxing at home, what level of interaction are you looking for from your cat?</h2>
+                </div>
+
+                <div class="answer-options">
+                    <!-- Answer 1 -->
+                    <div class="answer-card" data-answer="high-social">
+                        <img src="../../images/high-social.jpg" alt="High social cat">
+                        <div class="answer-overlay">
+                            <h3>high<br>social</h3>
+                            <p>I want an outgoing cat that seeks attention and loves frequent play.</p>
+                        </div>
+                    </div>
+                    <div class="answer-separator"></div>
+
+                    <!-- Answer 2 -->
+                    <div class="answer-card" data-answer="medium-activity">
+                        <img src="../../images/medium-activity.jpg" alt="Medium activity cat">
+                        <div class="answer-overlay">
+                            <h3>medium<br>activity</h3>
+                            <p>I want a companion who enjoys playtime but is happy to chill when I need it.</p>
+                        </div>
+                    </div>
+                    <div class="answer-separator"></div>
+
+                    <!-- Answer 3 -->
+                    <div class="answer-card" data-answer="low-social">
+                        <img src="../../images/low-social.jpg" alt="Low social cat">
+                        <div class="answer-overlay">
+                            <h3>low<br>social</h3>
+                            <p>I prefer an independent cat who enjoys calm, quiet time nearby.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="quiz-question" data-question="2">
+                <div class="question-header">
+                    <span class="question-number">02.</span>
+                    <h2 class="question-text">How much grooming are you comfortable with?</h2>
+                </div>
+
+                <div class="answer-options">
+                    <!-- Answer 1 -->
+                    <div class="answer-card" data-answer="minimal-grooming">
+                        <img src="../../images/minimal-grooming.jpg" alt="Minimal grooming">
+                        <div class="answer-overlay">
+                            <h3>minimal<br>grooming</h3>
+                            <p>I prefer low-maintenance coats and quick weekly brushing at most.</p>
+                        </div>
+                    </div>
+                    <div class="answer-separator"></div>
+
+                    <!-- Answer 2 -->
+                    <div class="answer-card" data-answer="moderate-grooming">
+                        <img src="../../images/moderate-grooming.jpg" alt="Moderate grooming">
+                        <div class="answer-overlay">
+                            <h3>moderate<br>grooming</h3>
+                            <p>I don’t mind brushing a few times a week to keep the coat tidy.</p>
+                        </div>
+                    </div>
+                    <div class="answer-separator"></div>
+
+                    <!-- Answer 3 -->
+                    <div class="answer-card" data-answer="minimal-grooming">
+                        <img src="../../images/low-grooming.jpg" alt="Low grooming">
+                        <div class="answer-overlay">
+                            <h3>low<br>grooming</h3>
+                            <p>I’d like very little grooming—short coats that are easy to manage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="quiz-question" data-question="3">
+                <div class="question-header">
+                    <span class="question-number">03.</span>
+                    <h2 class="question-text">What size is your living space?</h2>
+                </div>
+
+                <div class="answer-options">
+                    <!-- Answer 1 -->
+                    <div class="answer-card" data-answer="small-apartment">
+                        <img src="../../images/apartment.jpg" alt="Small apartment">
+                        <div class="answer-overlay">
+                            <h3>small<br>apartment</h3>
+                            <p>Compact space—cozy living with limited room for zoomies.</p>
+                        </div>
+                    </div>
+                    <div class="answer-separator"></div>
+
+                    <!-- Answer 2 -->
+                    <div class="answer-card" data-answer="medium-house">
+                        <img src="../../images/house.jpg" alt="Medium house">
+                        <div class="answer-overlay">
+                            <h3>medium<br>house</h3>
+                            <p>Enough room for play and rest, with a few sunny windowsills.</p>
+                        </div>
+                    </div>
+                    <div class="answer-separator"></div>
+
+                    <!-- Answer 3 -->
+                    <div class="answer-card" data-answer="large-space">
+                        <img src="../../images/garden.jpg" alt="Large space">
+                        <div class="answer-overlay">
+                            <h3>large<br>space</h3>
+                            <p>Plenty of space to explore, climb, and nap in different spots.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="quizResults" class="results-section">
+        <div class="results-container">
+            <div class="result-card">
+                <div class="result-media">
+                    <img id="resultImage" src="" alt="" class="result-image">
+                </div>
+                <div class="result-content">
+                    <p class="result-kicker">Your purr-fect match is</p>
+                    <h2 id="resultBreedName" class="result-title"></h2>
+                    <div id="resultBadges" class="result-badges"></div>
+                    <p id="resultBreedDescription" class="result-description"></p>
+                    <div class="result-actions">
+                        <a href="breeds.html" class="btn btn-secondary">Explore Breeds</a>
+                        <button id="restartQuiz" class="btn btn-primary">Restart Quiz</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="../javascript/nav.js"></script>
+    <script src="../javascript/quiz.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whiskr | Breeds</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="/images/logo-dark.svg" alt="" class="logo">
+        <button class="menu-toggle" aria-label="Open menu">
+            <img src="/images/menu-dark.svg" alt="">
+        </button>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="breeds.html" class="active">Breeds</a>
+            <a href="map.html">Map</a>
+            <a href="care.html">Care</a>
+            <a href="quiz.html" class="nav-mobile-only">Find Your Cat</a>
+        </nav>
+
+        <div class="find-cat-btn">
+            <a href="quiz.html">
+                <span>Find Your Cat</span>
+                <img src="../../images/down-arrow.svg" alt="">
+            </a>
+        </div>
+    </header>
+
+    <div class="scroll-container">
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+            <div class="image-wrapper">
+                <img src="../../images/ragdoll.jpg" alt="Ragdoll" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">ragdoll</span>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../../images/persian.jpg" alt="Persian" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">persian</span>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../../images/siamese.jpg" alt="Siamese" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">siamese</span>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../../images/scottishfold.jpg" alt="Scottish Fold" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">scottish<br>fold</span>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../../images/sphynx.jpg" alt="Sphynx" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">sphynx</span>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../../images/burmese.jpg" alt="Burmese" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">burmese</span>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../../images/britishshorthair.jpg" alt="British Shorthair" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">british<br>shorthair</span>
+                </div>
+            </div>
+            <div class="image-wrapper">
+                <img src="../../images/mainecoon.jpg" alt="Maine Coon" class="image" draggable="false">
+                <div class="image-overlay">
+                    <span class="breed-name">maine<br>coon</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breed-modal" id="breedModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+
+            <div class="modal-image-container">
+                <img src="" alt="" class="modal-image" id="modalImage">
+            </div>
+
+            <div class="modal-info">
+                <h2 id="modalBreedName"></h2>
+                <p id="modalBreedDescription"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../javascript/nav.js"></script>
+    <script src="../javascript/breeds.js"></script>
+
+</body>
+
+</html>
