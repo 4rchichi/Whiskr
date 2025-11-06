@@ -138,7 +138,7 @@ nav a:hover {
     position: relative;
     display: flex;
     align-items: center;
-    background: url(/images/hero.png);
+    background: url(../../images/hero.png);
     background-size: cover;
     background-position: center;
     animation: fadeIn 0.6s ease-in-out;
