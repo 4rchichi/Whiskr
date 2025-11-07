@@ -1,3 +1,4 @@
+/* Horizontal scroll - Converts vertical mouse wheel to horizontal scroll for breed gallery */
 const scrollContainer = document.querySelector('.scroll-container');
 
 let scrollTimeout;
@@ -5,16 +6,15 @@ let scrollTimeout;
 scrollContainer.addEventListener('wheel', (e) => {
     e.preventDefault();
 
-
     clearTimeout(scrollTimeout);
 
-
+    /* Scrolls horizontally basded on vertical wheel movement */
     scrollContainer.scrollBy({
         left: e.deltaY,
         behavior: 'auto'
     });
 
-
+    /* Temporarily enables smooth scrolling after scroll stops */
     scrollTimeout = setTimeout(() => {
         scrollContainer.style.scrollBehavior = 'smooth';
         setTimeout(() => {
@@ -24,7 +24,7 @@ scrollContainer.addEventListener('wheel', (e) => {
 
 }, { passive: false });
 
-
+/* Modal elemeents - Selects all DOM elements needed for breed detail modal */
 const imageWrappers = document.querySelectorAll('.image-wrapper');
 const modal = document.getElementById('breedModal');
 const modalImage = document.getElementById('modalImage');
@@ -33,7 +33,7 @@ const modalBreedDescription = document.getElementById('modalBreedDescription');
 const modalClose = document.querySelector('.modal-close');
 const modalOverlay = document.querySelector('.modal-overlay');
 
-
+/* Breed data - Contains information for each cat breed */
 const breedData = {
     'ragdoll': {
         name: 'Ragdoll',
@@ -77,45 +77,44 @@ const breedData = {
     }
 };
 
-
+/* Breed click handler - Opens modal with breed details when image is clicked */
 imageWrappers.forEach(wrapper => {
     wrapper.addEventListener('click', function () {
-
+        /* Extracts breed name from clicked image and normalizes it */
         const breedNameElement = this.querySelector('.breed-name');
         const breedName = breedNameElement.textContent.trim().toLowerCase().replace(/\s+/g, '');
 
-
+        /* Finds matching breed data */
         const breed = breedData[breedName];
 
         if (breed) {
-
+            /* Populates modal with breed information */
             modalImage.src = breed.image;
             modalImage.alt = breed.name;
             modalBreedName.textContent = breed.name;
             modalBreedDescription.textContent = breed.description;
 
-
+            /* Shows modal and prevents body scroll */
             modal.classList.add('active');
-
-
             document.body.style.overflow = 'hidden';
         }
     });
 });
 
-
+/* Close modal - Close button click handler */
 modalClose.addEventListener('click', closeModal);
 
-
+/* Close modal - Overlay click handler */
 modalOverlay.addEventListener('click', closeModal);
 
-
+/* Close modal - ESC key handler */
 document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && modal.classList.contains('active')) {
         closeModal();
     }
 });
 
+/* Close modal function - Hides modal and restores body scroll */
 function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';

@@ -1,4 +1,4 @@
-
+/* Quiz elements - Selects all DOM elements needed for quiz functionality */
 const questions = document.querySelectorAll('.quiz-question');
 const quizPage = document.querySelector('.quiz-page');
 const resultsSection = document.getElementById('quizResults');
@@ -8,10 +8,11 @@ const resultBreedDescription = document.getElementById('resultBreedDescription')
 const resultBadges = document.getElementById('resultBadges');
 const restartBtn = document.getElementById('restartQuiz');
 
+/* Quiz state - Tracks current question and user answers */
 let currentQuestion = 1;
 let answers = {};
 
-
+/* Breed matching - Maps answer combinations to recommended cat breeds */
 const breedMatches = {
     'high-social-minimal-grooming-small-apartment': {
         breed: 'Siamese',
@@ -36,42 +37,42 @@ const breedMatches = {
     }
 };
 
-
+/* Answer selection - Handles click events on answer cards */
 document.querySelectorAll('.answer-card').forEach(card => {
     card.addEventListener('click', function () {
         const answer = this.getAttribute('data-answer');
         const questionNum = this.closest('.quiz-question').getAttribute('data-question');
 
-
+        /* Stores user's answer */
         answers[questionNum] = answer;
 
-
+        /* Advances to next question or shows results */
         if (currentQuestion < questions.length) {
-
+            /* Hide current question */
             questions[currentQuestion - 1].classList.remove('active');
 
-
+            /* Show next question */
             currentQuestion++;
             questions[currentQuestion - 1].classList.add('active');
         } else {
-
+            /* All questions answered - show results */
             showResults();
         }
     });
 });
 
-
+/* Show results - Displays quiz results with breed recommendation */
 function showResults() {
-
+    /* Hides all questions */
     questions.forEach(q => q.classList.remove('active'));
 
-
+    /* Creates answer key from user's selections */
     const answerKey = `${answers['1']}-${answers['2']}-${answers['3']}`;
 
-
+    /* Gets matching breed or uses default */
     const result = breedMatches[answerKey] || breedMatches['default'];
 
-
+    /* Populattes result image and breed name */
     if (resultImage) {
         resultImage.src = result.image;
         resultImage.alt = result.breed;
@@ -83,7 +84,7 @@ function showResults() {
         resultBreedDescription.textContent = result.description;
     }
 
-
+    /* Generattes badges based on user answers */
     if (resultBadges) {
         const badges = [];
         switch (answers['1']) {
@@ -122,16 +123,16 @@ function showResults() {
             .join('');
     }
 
-
+    /* Hides quiz page */
     if (quizPage) {
         quizPage.style.display = 'none';
     }
 
-
+    /* Shows results section and scrolls to it */
     if (resultsSection) {
         resultsSection.classList.add('active');
 
-
+        /* Smooth scroll to results after brief delay */
         setTimeout(() => {
             const headerHeight = document.querySelector('header')?.offsetHeight || 0;
             const resultsTop = resultsSection.offsetTop - headerHeight;
@@ -140,22 +141,22 @@ function showResults() {
     }
 }
 
-
+/* Restart quiz - Resets quiz to initial state and returns to first question */
 if (restartBtn) {
     restartBtn.addEventListener('click', function () {
-
+        /* Resets quiz state */
         currentQuestion = 1;
         answers = {};
 
-
+        /* Hides results section */
         if (resultsSection) resultsSection.classList.remove('active');
 
-
+        /* Shows quiz page */
         if (quizPage) {
             quizPage.style.display = '';
         }
 
-
+        /* Resets all quesstions to initial state */
         questions.forEach((q, index) => {
             if (index === 0) {
                 q.classList.add('active');
@@ -164,7 +165,7 @@ if (restartBtn) {
             }
         });
 
-
+        /* Smooth scroll back to quiz */
         setTimeout(() => {
             if (quizPage) {
                 const headerHeight = document.querySelector('header')?.offsetHeight || 0;
